@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+Room | MeetApp
+{% endblock title %}
+
+{% block content %}
+<main>
+    <section id="room-name-wrapper">
+        <div class="container" style="margin-top: 70px;">
+            <div class="row">
+                <div class="col-12">
+                    <p>Room Name: <span id="room-name"></span></p>
+                    {% include 'inc/message.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="video-streams"></section>
+    <section id="controls-wrapper">
+        <div class="icon-wrapper">
+            <img class="control-icon" id="mic-btn" src="{% static 'images/microphone.png' %}">
+        </div>
+        <div class="icon-wrapper">
+            <img class="control-icon" id="camera-btn" src="{% static 'images/video.png' %}">
+        </div>
+        <div class="icon-wrapper">
+            <img class="control-icon" id="leave-btn" src="{% static 'images/leave.png' %}">
+        </div>
+    </section>
+</main>
+<script type="text/javascript" src="{% static 'assets/AgoraRTC_N-4.15.0.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascript/streams.js' %}"></script>
+{% endblock content %}
